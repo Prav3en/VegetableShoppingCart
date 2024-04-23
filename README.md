@@ -5,15 +5,15 @@ This project is a vegetable shopping cart implemented using ASP.NET MVC 5. It al
 
 # Features
 # Admin Role
---> Add new products to the inventory
---> Perform CRUD operations on products
---> Track orders
---> Manage users
+--> Add new products to the inventory <br>
+--> Perform CRUD operations on products <br>
+--> Track orders <br> 
+--> Manage users <br>
 # User Role
---> Browse and add products to cart
---> Make purchases
+--> Browse and add products to cart <br>
+--> Make purchases <br>
 # Technology Stack
-ASP.NET MVC 5
-Entity Framework
-Session Authentication
-Session-based cart management
+--> ASP.NET MVC 5 <br>
+--> Entity Framework <br>
+--> Session Authentication <br>
+--> Session-based cart management <br>
