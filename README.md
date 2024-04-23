@@ -9,7 +9,7 @@ This project is a vegetable shopping cart implemented using ASP.NET MVC 5. It al
 --> Perform CRUD operations on products
 --> Track orders
 --> Manage users
-User Role
+# User Role
 --> Browse and add products to cart
 --> Make purchases
 # Technology Stack
