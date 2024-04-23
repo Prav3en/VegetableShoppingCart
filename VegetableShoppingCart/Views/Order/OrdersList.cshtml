@@ -1,0 +1,35 @@
+﻿@model List<VegetableShoppingCart.Models.Order>
+@{
+    ViewBag.Title = "OrdersList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container">
+    <h2>Order List</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Customer ID</th>
+                <th>Total Amount</th>
+                <th>Order Date</th>
+                <th>Payment Status</th>
+                <th>Order Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model)
+            {
+                <tr>
+                    <td>@order.OrderID</td>
+                    <td>@order.UserId</td>
+                    <td>@order.TotalAmount.ToString("C")</td>
+                    <td>@order.OrderDate</td>
+                    <td>@order.OrderStatus</td>
+                    <td>Delivered</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

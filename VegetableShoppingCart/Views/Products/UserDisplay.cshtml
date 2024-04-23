@@ -1,0 +1,59 @@
+﻿@model IEnumerable<VegetableShoppingCart.Models.Product>
+
+@{
+    ViewBag.Title = "UserDisplay";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<style>
+    /* Basic styling */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        padding: 20px;
+    }
+
+    .vegetable {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin: 10px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+        .vegetable img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .vegetable h3 {
+            margin: 10px 0;
+        }
+
+        .vegetable p {
+            color: #555;
+        }
+</style>
+<body>
+    @Html.ActionLink("View Your Cart", "CartView", "Carts")
+
+    @foreach (var item in Model)
+    {
+        <div class="vegetable">
+            <img src="@Url.Content(item.ImageURL)" alt="@item.Name">
+            <h3>@item.Name</h3>
+            <p>@item.Description<br>Price: @item.Price<br>Category: @item.Category<br>Quantity: @item.StockQuantity</p>
+            @using (Html.BeginForm("AddToCart", "Carts", new { productId = item.ProductID, productName = item.Name, price = item.Price }, FormMethod.Post))
+            {
+                <input type="hidden" name="productId" value="@item.ProductID" />
+                <input type="number" name="quantity" value="1" min="1" />
+                <input type="submit" value="Add to Cart" class="btn btn-primary" />
+            }
+            @Html.ActionLink("Product Detail", "DetailDisplay", new { id = item.ProductID })
+
+
+        </div>
+    }
+
+</body>
